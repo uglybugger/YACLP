@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>YACLP</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://mit-license.org/</licenseUrl>
+    <projectUrl>https://github.com/uglybugger/Yaclp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2012 Andrew Harcourt. Released under MIT Licence.</copyright>
+    <tags>command line argument parameter parser arguments parameters</tags>
+  </metadata>
+</package>
