@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yaclp", "Yaclp\Yaclp.csproj", "{0FC99D78-337A-4039-9FAE-A9B1E86FF0E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yaclp.Tests", "Yaclp.Tests\Yaclp.Tests.csproj", "{BD0627EA-B893-43A5-AB25-899FE7C65A77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yaclp.Sample", "Yaclp.Sample\Yaclp.Sample.csproj", "{9A7E9EB7-105E-4D9C-98E5-A7232C9D00F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{D6B087D5-83D0-4351-8C40-47F165A17A8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FC99D78-337A-4039-9FAE-A9B1E86FF0E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC99D78-337A-4039-9FAE-A9B1E86FF0E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC99D78-337A-4039-9FAE-A9B1E86FF0E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC99D78-337A-4039-9FAE-A9B1E86FF0E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7E9EB7-105E-4D9C-98E5-A7232C9D00F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7E9EB7-105E-4D9C-98E5-A7232C9D00F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7E9EB7-105E-4D9C-98E5-A7232C9D00F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7E9EB7-105E-4D9C-98E5-A7232C9D00F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD0627EA-B893-43A5-AB25-899FE7C65A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD0627EA-B893-43A5-AB25-899FE7C65A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD0627EA-B893-43A5-AB25-899FE7C65A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD0627EA-B893-43A5-AB25-899FE7C65A77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9A7E9EB7-105E-4D9C-98E5-A7232C9D00F2} = {D6B087D5-83D0-4351-8C40-47F165A17A8B}
+	EndGlobalSection
+EndGlobal
