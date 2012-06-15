@@ -52,6 +52,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="GivenAModelWithDifferentTypesOfParameters\AllDifferentTypesOfParametersModel.cs" />
+    <Compile Include="GivenAModelWithDifferentTypesOfParameters\WhenParsingValidArguments.cs" />
     <Compile Include="GivenAModelWithAllMandatoryParameters\ModelWithAllMandatoryParameters.cs" />
     <Compile Include="GivenAModelWithAllMandatoryParameters\WhenGeneratingTheUsageMessage.cs" />
     <Compile Include="GivenAModelWithAllMandatoryParameters\WhenParsingAValidArgumentList.cs" />

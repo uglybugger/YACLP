@@ -1,27 +1,21 @@
 ﻿using System;
-using Yaclp.Exceptions;
 
 namespace Yaclp.Sample
 {
-    internal class Program
+    public class Program
     {
-        private static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            MyCommandLineParameters options;
-
             try
             {
-                options = new Parser<MyCommandLineParameters>().Parse(args);
+                var options = YaclpParserFactory.CreateParserFor<MyCommandLineParameters>().ParseOrExitWithUsageMessage(args);
+                new Greeter(options).SayHelloToTheNicePerson();
             }
-            catch (YaclpException exc)
+            finally
             {
-                Console.WriteLine(exc.Message);
+                Console.Write("Press any key to exit...");
                 Console.ReadKey();
-                return;
             }
-
-            new Greeter(options).SayHelloToTheNicePerson();
-            Console.ReadKey();
         }
     }
 }

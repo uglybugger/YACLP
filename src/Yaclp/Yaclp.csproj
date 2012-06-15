@@ -42,6 +42,7 @@
     <Compile Include="Attributes\ParameterDefaultAttribute.cs" />
     <Compile Include="Attributes\ParameterDescriptionAttribute.cs" />
     <Compile Include="Attributes\ParameterExampleAttribute.cs" />
+    <Compile Include="DefaultTypeConverter.cs" />
     <Compile Include="Exceptions\YaclpException.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Exceptions\OptionalArgumentFormatException.cs" />
@@ -49,12 +50,14 @@
     <Compile Include="Extensions\PropertyInfoExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="ITypeConverter.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exceptions\PropertyNotFoundException.cs" />
     <Compile Include="Exceptions\PropertyNotOptionalException.cs" />
     <Compile Include="Exceptions\ParameterCountException.cs" />
     <Compile Include="UsageMessageBuilder.cs" />
+    <Compile Include="YaclpParserFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

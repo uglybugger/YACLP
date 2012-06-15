@@ -13,7 +13,7 @@ namespace Yaclp.Tests.GivenAModelWithAllOptionalParameters
 
         protected override Parser<ModelWithAllOptionalParameters> Given()
         {
-            return new Parser<ModelWithAllOptionalParameters>();
+            return YaclpParserFactory.CreateParserFor<ModelWithAllOptionalParameters>();
         }
 
         protected override void When()

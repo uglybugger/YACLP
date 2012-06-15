@@ -10,7 +10,7 @@ namespace Yaclp.Tests.GivenAModelWithMandatoryAndOptionalParameters
 
         protected override Parser<ModelWithMandatoryAndOptionalParameters> Given()
         {
-            return new Parser<ModelWithMandatoryAndOptionalParameters>();
+            return  YaclpParserFactory.CreateParserFor<ModelWithMandatoryAndOptionalParameters>();
         }
 
         protected override void When()

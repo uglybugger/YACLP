@@ -14,7 +14,7 @@ namespace Yaclp.Tests.GivenAModelWithAllMandatoryParameters
 
         protected override Parser<ModelWithAllMandatoryParameters> Given()
         {
-            return new Parser<ModelWithAllMandatoryParameters>();
+            return YaclpParserFactory.CreateParserFor<ModelWithAllMandatoryParameters>();
         }
 
         protected override void When()

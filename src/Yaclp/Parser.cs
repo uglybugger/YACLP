@@ -10,6 +10,13 @@ namespace Yaclp
 {
     public class Parser<T> where T : class, new()
     {
+        private readonly ITypeConverter _typeConverter;
+
+        public Parser(ITypeConverter typeConverter)
+        {
+            _typeConverter = typeConverter;
+        }
+
         public T Parse(IEnumerable<string> args)
         {
             var argStack = new Stack<string>(args.Reverse());
@@ -21,18 +28,33 @@ namespace Yaclp
             return result;
         }
 
-        private static void PopulateDefaultProperties(T result)
+        public T ParseOrExitWithUsageMessage(IEnumerable<string> args)
+        {
+            try
+            {
+                return Parse(args);
+            }
+            catch (YaclpException exc)
+            {
+                Console.WriteLine(exc.Message);
+                Environment.Exit(1);
+            }
+
+            return null;
+        }
+
+        private void PopulateDefaultProperties(T result)
         {
             foreach (var prop in typeof(T).GetProperties())
             {
                 var defaultValueAttribute = prop.GetCustomAttributes<ParameterDefaultAttribute>().FirstOrDefault();
                 if (defaultValueAttribute == null) continue;
-                var value = Convert.ChangeType(defaultValueAttribute.Value, prop.PropertyType);
+                var value = _typeConverter.Convert(defaultValueAttribute.Value, prop.PropertyType);
                 prop.SetValue(result, value);
             }
         }
 
-        private static void PopulateMandatoryProperties(T result, Stack<string> argStack)
+        private void PopulateMandatoryProperties(T result, Stack<string> argStack)
         {
             var mandatoryProperties = typeof(T).GetMandatoryProperties();
 
@@ -41,12 +63,12 @@ namespace Yaclp
             foreach (var prop in mandatoryProperties)
             {
                 var requiredArg = argStack.Pop();
-                var value = Convert.ChangeType(requiredArg, prop.PropertyType);
+                var value = _typeConverter.Convert(requiredArg, prop.PropertyType);
                 prop.SetValue(result, value);
             }
         }
 
-        private static void PopulateOptionalProperties(T result, Stack<string> argStack)
+        private void PopulateOptionalProperties(T result, Stack<string> argStack)
         {
             while (argStack.Any())
             {
@@ -62,7 +84,7 @@ namespace Yaclp
                 if (prop == null) throw new PropertyNotFoundException(propertyName, typeof(T));
                 if (!prop.IsOptional()) throw new PropertyNotOptionalException(propertyName, typeof(T));
 
-                var value = Convert.ChangeType(propertyValue, prop.PropertyType);
+                var value = _typeConverter.Convert(propertyValue, prop.PropertyType);
                 prop.SetValue(result, value);
             }
         }
