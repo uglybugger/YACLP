@@ -47,7 +47,7 @@ namespace Yaclp
         {
             foreach (var prop in typeof(T).GetProperties())
             {
-                var defaultValueAttribute = prop.GetCustomAttributes<ParameterDefaultAttribute>().FirstOrDefault();
+                var defaultValueAttribute = prop.GetCustomAttributes<ParameterDefaultAttribute>(true).FirstOrDefault();
                 if (defaultValueAttribute == null) continue;
                 var value = _typeConverter.Convert(defaultValueAttribute.Value, prop.PropertyType);
                 prop.SetValue(result, value);
