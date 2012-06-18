@@ -35,6 +35,7 @@ namespace Yaclp
             {
                 sb.AppendFormat("\t{0}", descriptionMessage);
                 sb.AppendLine();
+                sb.AppendLine();
             }
             sb.AppendLine();
 
@@ -74,11 +75,14 @@ namespace Yaclp
             var description = descriptionAttribute != null ? descriptionAttribute.Description : string.Empty;
 
             var exampleAttribute = propertyInfo.GetCustomAttributes<ParameterExampleAttribute>().FirstOrDefault();
-            var example = exampleAttribute != null ? exampleAttribute.Example : string.Empty;
+            var example = exampleAttribute != null ? exampleAttribute.Example : null;
+
+            var defaultAttribute = propertyInfo.GetCustomAttributes<ParameterDefaultAttribute>().FirstOrDefault();
+            var defaultValue = defaultAttribute != null ? defaultAttribute.Value : null;
 
             var explanation = string.IsNullOrWhiteSpace(description) && string.IsNullOrWhiteSpace(example)
                                   ? "(No idea. Sorry.)"
-                                  : "{0} e.g. '{1}'".FormatWith(description, example);
+                                  : "{0} e.g. '{1}'".FormatWith(description, example ?? defaultValue ?? string.Empty);
 
             var sb = new StringBuilder();
             sb.AppendFormat("{0}", propertyInfo.Name);
