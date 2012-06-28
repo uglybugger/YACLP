@@ -1,7 +1,15 @@
 #YACLP
 ##Yet Another Command-Line Parser
 
-YACLP is yet another command-line parser. It's designed to be quick to include and invoke, and require very little work. The key feature of YACLP is its intelligent generation of usage messages when command-line input does not comply with parsing rules.
+It's on NuGet:
+
+    Install-Package YACLP
+
+Why another one?
+
+Because there were a bunch out there but all of them focused more on the parsing than on being quick and easy to call.
+
+I want my command-line parser to not only parse arguments (which it does, but isn't very flexible about) but to automatically generate a usage message so that I don't have to.
 
 ##Simple Usage
     
