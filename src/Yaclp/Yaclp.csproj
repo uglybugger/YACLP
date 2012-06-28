@@ -46,6 +46,7 @@
     <Compile Include="Attributes\ParameterDefaultAttribute.cs" />
     <Compile Include="Attributes\ParameterDescriptionAttribute.cs" />
     <Compile Include="Attributes\ParameterExampleAttribute.cs" />
+    <Compile Include="DefaultParser.cs" />
     <Compile Include="DefaultTypeConverter.cs" />
     <Compile Include="Exceptions\YaclpException.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
