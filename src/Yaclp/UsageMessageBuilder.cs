@@ -62,14 +62,19 @@ namespace Yaclp
 
         private IEnumerable<string> BuildParameterDescriptionMessages()
         {
-            return _parametersType
+            var properties = _parametersType
                 .GetMandatoryProperties()
                 .Union(_parametersType.GetOptionalProperties())
-                .Select(BuildParameterDescriptionMessage)
+                .ToArray();
+
+            var maxPropertyNameLength = properties.Max(p => p.Name.Length);
+
+            return properties
+                .Select(propertyInfo => BuildParameterDescriptionMessage(propertyInfo, maxPropertyNameLength))
                 .ToArray();
         }
 
-        private static string BuildParameterDescriptionMessage(PropertyInfo propertyInfo)
+        private static string BuildParameterDescriptionMessage(PropertyInfo propertyInfo, int maxPropertyLength)
         {
             var descriptionAttribute = propertyInfo.GetCustomAttributes<ParameterDescriptionAttribute>().FirstOrDefault();
             var description = descriptionAttribute != null ? descriptionAttribute.Description : string.Empty;
@@ -80,14 +85,27 @@ namespace Yaclp
             var defaultAttribute = propertyInfo.GetCustomAttributes<ParameterDefaultAttribute>().FirstOrDefault();
             var defaultValue = defaultAttribute != null ? defaultAttribute.Value : null;
 
-            var explanation = string.IsNullOrWhiteSpace(description) && string.IsNullOrWhiteSpace(example)
-                                  ? "(No idea. Sorry.)"
-                                  : "{0} e.g. '{1}'".FormatWith(description, example ?? defaultValue ?? string.Empty);
+            var explanation = new StringBuilder();
+
+            if (string.IsNullOrWhiteSpace(description) &&
+                string.IsNullOrWhiteSpace(example) &&
+                string.IsNullOrWhiteSpace(defaultValue))
+            {
+                explanation.Append("(No idea. Sorry.)");
+            }
+            else
+            {
+                if (!string.IsNullOrWhiteSpace(description))
+                    explanation.AppendFormat("{0} ", description);
+                
+                if (!string.IsNullOrWhiteSpace(example) || !string.IsNullOrWhiteSpace(defaultValue))
+                    explanation.AppendFormat("e.g. '{0}'", example ?? defaultValue);
+            }
 
             var sb = new StringBuilder();
-            sb.AppendFormat("{0}", propertyInfo.Name);
+            sb.AppendFormat("{0}", propertyInfo.Name.PadRight(maxPropertyLength));
             sb.Append("\t");
-            sb.AppendFormat(explanation);
+            sb.Append(explanation);
             return sb.ToString();
         }
     }
