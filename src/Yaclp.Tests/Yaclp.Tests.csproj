@@ -58,6 +58,8 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="GivenAModelWithParameterDocumentation\ModelWithParameterDocumentation.cs" />
+    <Compile Include="GivenAModelWithParameterDocumentation\WhenGeneratingTheUsageMessage.cs" />
     <Compile Include="GivenAModelWithDifferentTypesOfParameters\AllDifferentTypesOfParametersModel.cs" />
     <Compile Include="GivenAModelWithDifferentTypesOfParameters\WhenParsingValidArguments.cs" />
     <Compile Include="GivenAModelWithAllMandatoryParameters\ModelWithAllMandatoryParameters.cs" />
