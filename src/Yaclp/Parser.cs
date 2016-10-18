@@ -45,7 +45,7 @@ namespace Yaclp
 
         private void PopulateDefaultProperties(T result)
         {
-            foreach (var prop in typeof(T).GetProperties())
+            foreach (var prop in typeof(T).GetProperties(BindingFlags.Instance | BindingFlags.Public))
             {
                 var defaultValueAttribute = prop.GetCustomAttributes<ParameterDefaultAttribute>(true).FirstOrDefault();
                 if (defaultValueAttribute == null) continue;
