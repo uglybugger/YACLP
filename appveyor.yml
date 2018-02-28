@@ -31,7 +31,7 @@ deploy:
 - provider: NuGet
   server: https://www.myget.org/F/yaclp/api/v2/package
   api_key:
-    secure: kEnorOjLoPoKV4Fau88X07gPDv0hSoQCUh/0H1SRvA8lDVWrarQv2GyItYPBBE9S
+    secure: shfnDtqvaNhaz7EQolekac0LkvNhqqi31VtWgTA2+JYktOxHuiI3Xsgwr+kFKWzM
   symbol_server: https://www.myget.org/F/yaclp/symbols/api/v2/package
   on:
     branch: master
