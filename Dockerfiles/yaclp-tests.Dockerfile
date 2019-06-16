@@ -4,5 +4,6 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.2
 
 WORKDIR /app
 COPY --from=build-container /src .
+RUN chmod 700 run-tests.sh
 
 ENTRYPOINT [ "dotnet", "test", "--logger:trx" ]
