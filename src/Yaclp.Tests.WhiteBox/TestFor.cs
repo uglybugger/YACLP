@@ -1,4 +1,4 @@
-﻿namespace Yaclp.Tests
+﻿namespace Yaclp.Tests.WhiteBox
 {
     
     public abstract class TestFor<T> where T : class

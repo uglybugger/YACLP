@@ -1,7 +1,7 @@
 ﻿using Shouldly;
 using Xunit;
 
-namespace Yaclp.Tests.GivenAModelWithMandatoryAndOptionalParameters
+namespace Yaclp.Tests.WhiteBox.GivenAModelWithMandatoryAndOptionalParameters
 {
     
     public class WhenParsingAValidButOutOfOrderArgumentList : TestFor<Parser<ModelWithMandatoryAndOptionalParameters>>

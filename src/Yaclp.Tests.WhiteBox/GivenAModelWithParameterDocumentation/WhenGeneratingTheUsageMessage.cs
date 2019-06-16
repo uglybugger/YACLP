@@ -2,9 +2,8 @@
 using System.Linq;
 using Shouldly;
 using Xunit;
-using Yaclp.Tests.GivenAModelWithAllMandatoryParameters;
 
-namespace Yaclp.Tests.GivenAModelWithSomeParameterDescriptions
+namespace Yaclp.Tests.WhiteBox.GivenAModelWithParameterDocumentation
 {
     
     public class WhenGeneratingTheUsageMessage : TestFor<UsageMessageBuilder>

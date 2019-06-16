@@ -1,7 +1,7 @@
 ﻿using Shouldly;
 using Xunit;
 
-namespace Yaclp.Tests.GivenAModelWithAllMandatoryParameters
+namespace Yaclp.Tests.WhiteBox.GivenAModelWithAllMandatoryParameters
 {
     public class WhenGeneratingTheUsageMessage : TestFor<UsageMessageBuilder>
     {

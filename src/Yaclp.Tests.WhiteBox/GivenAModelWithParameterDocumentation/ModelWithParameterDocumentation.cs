@@ -1,6 +1,6 @@
 using Yaclp.Attributes;
 
-namespace Yaclp.Tests.GivenAModelWithSomeParameterDescriptions
+namespace Yaclp.Tests.WhiteBox.GivenAModelWithParameterDocumentation
 {
     public class ModelWithParameterDocumentation
     {

@@ -1,4 +1,4 @@
-namespace Yaclp.Tests.GivenAModelWithAllMandatoryParameters
+namespace Yaclp.Tests.WhiteBox.GivenAModelWithAllMandatoryParameters
 {
     public class ModelWithAllMandatoryParameters
     {

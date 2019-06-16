@@ -1,6 +1,6 @@
 using System;
 
-namespace Yaclp.Sample
+namespace Yaclp.Samples.Sample1
 {
     public class Greeter
     {

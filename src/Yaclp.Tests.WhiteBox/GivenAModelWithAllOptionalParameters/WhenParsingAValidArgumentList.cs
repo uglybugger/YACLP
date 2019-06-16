@@ -1,7 +1,7 @@
 ﻿using Shouldly;
 using Xunit;
 
-namespace Yaclp.Tests.GivenAModelWithAllOptionalParameters
+namespace Yaclp.Tests.WhiteBox.GivenAModelWithAllOptionalParameters
 {
     public class WhenParsingAValidArgumentList : TestFor<Parser<ModelWithAllOptionalParameters>>
     {

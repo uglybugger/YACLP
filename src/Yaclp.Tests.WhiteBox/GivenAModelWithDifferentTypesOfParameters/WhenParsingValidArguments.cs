@@ -1,7 +1,7 @@
 ﻿using Shouldly;
 using Xunit;
 
-namespace Yaclp.Tests.GivenAModelWithDifferentTypesOfParameters
+namespace Yaclp.Tests.WhiteBox.GivenAModelWithDifferentTypesOfParameters
 {
     
     public class WhenParsingValidArguments : TestFor<Parser<AllDifferentTypesOfParametersModel>>

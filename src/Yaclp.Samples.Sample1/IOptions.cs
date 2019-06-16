@@ -1,4 +1,4 @@
-namespace Yaclp.Sample
+namespace Yaclp.Samples.Sample1
 {
     public interface IOptions
     {

@@ -1,4 +1,4 @@
-namespace Yaclp.Tests.GivenAModelWithDifferentTypesOfParameters
+namespace Yaclp.Tests.WhiteBox.GivenAModelWithDifferentTypesOfParameters
 {
     public class AllDifferentTypesOfParametersModel
     {

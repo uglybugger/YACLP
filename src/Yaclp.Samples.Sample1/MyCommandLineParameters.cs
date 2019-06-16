@@ -1,6 +1,6 @@
 using Yaclp.Attributes;
 
-namespace Yaclp.Sample
+namespace Yaclp.Samples.Sample1
 {
     public class MyCommandLineParameters : IOptions
     {

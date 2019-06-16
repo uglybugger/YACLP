@@ -1,6 +1,6 @@
 using Yaclp.Attributes;
 
-namespace Yaclp.Tests.GivenAModelWithMandatoryAndOptionalParameters
+namespace Yaclp.Tests.WhiteBox.GivenAModelWithMandatoryAndOptionalParameters
 {
     public class ModelWithMandatoryAndOptionalParameters
     {

@@ -1,4 +1,4 @@
-namespace Yaclp.BetterSample
+namespace Yaclp.Samples.Sample2
 {
     public interface IConfiguration
     {

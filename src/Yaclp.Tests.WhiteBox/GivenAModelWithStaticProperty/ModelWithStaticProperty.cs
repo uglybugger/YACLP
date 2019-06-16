@@ -1,6 +1,4 @@
-﻿using Yaclp.Exceptions;
-
-namespace Yaclp.Tests.GivenAModelWithStaticProperty
+﻿namespace Yaclp.Tests.WhiteBox.GivenAModelWithStaticProperty
 {
     public class ModelWithStaticProperty
     {

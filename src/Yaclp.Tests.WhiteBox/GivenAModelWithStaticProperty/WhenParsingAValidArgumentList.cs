@@ -1,8 +1,7 @@
-
 using Shouldly;
 using Xunit;
 
-namespace Yaclp.Tests.GivenAModelWithStaticProperty
+namespace Yaclp.Tests.WhiteBox.GivenAModelWithStaticProperty
 {
     
     public class WhenParsingAValidArgumentList : TestFor<Parser<ModelWithStaticProperty>>
