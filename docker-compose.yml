@@ -3,7 +3,7 @@ version: "3"
 services:
 
   yaclp:
-    image: yaclp
+    image: yaclp:$BUILD_NUMBER
     build:
       context: .
       dockerfile: Dockerfiles/yaclp.Dockerfile
@@ -11,7 +11,9 @@ services:
         BUILD_NUMBER: $BUILD_NUMBER
 
   yaclp-tests:
-    image: yaclp-tests
+    image: yaclp-tests:$BUILD_NUMBER
     build:
       context: .
       dockerfile: Dockerfiles/yaclp-tests.Dockerfile
+      args:
+        BUILD_NUMBER: $BUILD_NUMBER
