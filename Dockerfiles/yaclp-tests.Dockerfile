@@ -6,4 +6,4 @@ WORKDIR /app
 COPY --from=build-container /src .
 RUN chmod 700 run-tests.sh
 
-ENTRYPOINT [ "dotnet", "test", "--logger:trx" ]
+ENTRYPOINT [ "run-tests.sh" ]
