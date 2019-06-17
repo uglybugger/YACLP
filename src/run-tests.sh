@@ -1,3 +1,3 @@
 #!/bin/bash
 
-dotnet test --logger:trx --output ${TEST_RESULTS_PATH:TestResults}
+dotnet test --logger:trx --results-directory ${TEST_RESULTS_PATH:TestResults}
